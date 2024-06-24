@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "Inter 400";
+  src: url(./fonts/Inter-400.ttf);
+}
+
+@font-face {
+  font-family: "Inter 500";
+  src: url(./fonts/Inter-500.ttf);
+}
+
+@font-face {
+  font-family: "Inter 900";
+  src: url(./fonts/Inter-900.ttf);
+}
