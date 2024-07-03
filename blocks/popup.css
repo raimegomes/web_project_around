@@ -41,7 +41,7 @@
   width: 358px;
   height: 27.34px;
   margin: 0 auto;
-  margin-bottom: 29.74px;
+  /*margin-bottom: 30px;*/
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 1);
 }
@@ -79,6 +79,25 @@
 
 .popup__close-btn:hover {
   opacity: 0.6;
+}
+
+/*PARTE DE VALIDAÇÃO*/
+.popup__error {
+  color: rgba(255, 0, 0, 1);
+  font-size: 12px;
+  font-weight: 400;
+  margin: 5px 0 30px 35px;
+}
+
+.popup__input_invalid {
+  border-color: rgba(255, 0, 0, 1);
+}
+
+.popup__save-btn:disabled {
+  color: #cac8c8;
+  background-color: rgb(255, 255, 255);
+  cursor: not-allowed;
+  border: 1px solid #cac8c8;
 }
 
 @media screen and (max-width: 1024px) {

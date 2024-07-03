@@ -27,7 +27,7 @@
   font-weight: 900;
   font-size: 24px;
   width: fit-content;
-  padding: 34px 0 54px 36px;
+  padding: 34px 0 34px 36px;
   margin: 0;
 }
 
@@ -41,7 +41,6 @@
   width: 358px;
   height: 27.34px;
   margin: 0 auto;
-  margin-bottom: 29.74px;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 1);
 }
@@ -79,6 +78,17 @@
 
 .new-img__close-btn:hover {
   opacity: 0.6;
+}
+
+.popup__input_invalid {
+  border-color: rgba(255, 0, 0, 1);
+}
+
+.new-img__save-btn:disabled {
+  color: #cac8c8;
+  background-color: rgb(255, 255, 255);
+  cursor: not-allowed;
+  border: 1px solid #cac8c8;
 }
 
 @media screen and (max-width: 1024px) {

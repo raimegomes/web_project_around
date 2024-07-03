@@ -34,7 +34,127 @@ document.addEventListener("DOMContentLoaded", function () {
     popup.style.display = "none";
   });
 
-  //Add imagens - like - delete
+  //validação do popup editar perfil - nome e bio
+  const nameError = document.querySelector("#popup__input-name-error");
+  const aboutError = document.querySelector("#popup__input-about-error");
+  const saveBtn = document.querySelector(".popup__save-btn");
+
+  function validateInput(input, errorElement) {
+    if (input.validity.valueMissing) {
+      errorElement.textContent = "Preencha esse campo.";
+    } else if (input.validity.tooShort || input.validity.tooLong) {
+      errorElement.textContent = `Este campo deve conter entre ${input.minLength} e ${input.maxLength} caracteres.`;
+    } else {
+      errorElement.textContent = "";
+    }
+    input.classList.toggle("popup__input_invalid", !input.validity.valid);
+  }
+
+  function checkFormValidity() {
+    if (nameInput.validity.valid && aboutInput.validity.valid) {
+      saveBtn.disabled = false;
+    } else {
+      saveBtn.disabled = true;
+    }
+  }
+
+  nameInput.addEventListener("input", function () {
+    validateInput(nameInput, nameError);
+    checkFormValidity();
+  });
+
+  aboutInput.addEventListener("input", function () {
+    validateInput(aboutInput, aboutError);
+    checkFormValidity();
+  });
+
+  editProfileBtn.addEventListener("click", function () {
+    nameInput.value = displayName.textContent;
+    aboutInput.value = displayAbout.textContent;
+
+    validateInput(nameInput, nameError);
+    validateInput(aboutInput, aboutError);
+    checkFormValidity();
+
+    popup.style.display = "flex";
+  });
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    displayName.textContent = nameInput.value;
+    displayAbout.textContent = aboutInput.value;
+
+    popup.style.display = "none";
+  });
+
+  function checkFormValidity() {
+    if (nameInput.validity.valid && aboutInput.validity.valid) {
+      saveBtn.disabled = false;
+    } else {
+      saveBtn.disabled = true;
+    }
+  }
+
+  //Validacão do formulário para add imagens
+  const newImgForm = document.querySelector("#newImgForm");
+  const titleInput = newImgForm.querySelector("#new-img__input-name");
+  const urlInput = newImgForm.querySelector("#new-img__input-url");
+  const newImgSaveBtn = newImgForm.querySelector(".new-img__save-btn");
+  const titleError = document.createElement("span");
+  titleError.classList.add("popup__error");
+  titleInput.parentNode.insertBefore(titleError, titleInput.nextSibling);
+
+  const urlError = document.createElement("span");
+  urlError.classList.add("popup__error");
+  urlInput.parentNode.insertBefore(urlError, urlInput.nextSibling);
+
+  function validateInput(input, errorElement) {
+    if (input.validity.valueMissing) {
+      errorElement.textContent = "Preencha esse campo.";
+    } else if (input.validity.typeMismatch) {
+      errorElement.textContent = "Por favor, insira um endereço web.";
+    } else {
+      errorElement.textContent = "";
+    }
+    input.classList.toggle("popup__input_invalid", !input.validity.valid);
+  }
+
+  function validateNewImgForm() {
+    validateInput(titleInput, titleError);
+    validateInput(urlInput, urlError);
+
+    if (titleInput.validity.valid && urlInput.validity.valid) {
+      newImgSaveBtn.disabled = false;
+    } else {
+      newImgSaveBtn.disabled = true;
+    }
+  }
+
+  titleInput.addEventListener("input", function () {
+    validateInput(titleInput, titleError);
+    validateNewImgForm();
+  });
+
+  urlInput.addEventListener("input", function () {
+    validateInput(urlInput, urlError);
+    validateNewImgForm();
+  });
+
+  newImgForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    if (titleInput.validity.valid && urlInput.validity.valid) {
+      const title = titleInput.value;
+      const link = urlInput.value;
+
+      const cardElement = createCard(title, link);
+      imgSection.prepend(cardElement);
+      newImgForm.reset();
+      newPlacePopup.style.display = "none";
+      newImgSaveBtn.disabled = true;
+    }
+  });
+
+  //Popup para add imagens - like - delete
   const profileAddBtn = document.querySelector("#profile__add");
   const newPlacePopup = document.querySelector(".new-img");
   const closePopupBtn = newPlacePopup.querySelector(".new-img__close-btn");
@@ -95,6 +215,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     return cardElement;
   }
+
+  window.addEventListener("click", function (event) {
+    if (event.target === newPlacePopup) {
+      newPlacePopup.style.display = "none";
+    }
+  });
 
   //popup para expandir as imagens
   function openImagePopup(imageElement) {

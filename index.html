@@ -71,8 +71,11 @@
                   id="popup__input-name"
                   name="name"
                   required
+                  minlength="2"
+                  maxlength="40"
                   class="popup__input"
                 />
+                <span id="popup__input-name-error" class="popup__error"></span>
                 <label for="popup__input-about" class="popup__label"
                   >Sobre mim</label
                 >
@@ -81,9 +84,14 @@
                   id="popup__input-about"
                   name="about"
                   required
+                  minlength="2"
+                  maxlength="200"
                   class="popup__input"
                 />
-                <button type="submit" class="popup__save-btn">Salvar</button>
+                <span id="popup__input-about-error" class="popup__error"></span>
+                <button type="submit" class="popup__save-btn" disabled>
+                  Salvar
+                </button>
               </form>
             </div>
           </div>
@@ -109,6 +117,8 @@
                   id="new-img__input-name"
                   name="title"
                   required
+                  minlength="2"
+                  maxlength="30"
                   class="new-img__input"
                   placeholder="Título"
                 />
@@ -116,14 +126,16 @@
                   >Link da imagem</label
                 >
                 <input
-                  type="text"
+                  type="url"
                   id="new-img__input-url"
                   name="link"
                   required
                   class="new-img__input"
                   placeholder="Link da imagem"
                 />
-                <button type="submit" class="new-img__save-btn">Criar</button>
+                <button type="submit" class="new-img__save-btn" disabled>
+                  Criar
+                </button>
               </form>
             </div>
           </div>
