@@ -31,6 +31,10 @@
   margin: 0;
 }
 
+.popup__hidden {
+  display: none !important;
+}
+
 .new-img__form {
   display: flex;
   flex-direction: column;
@@ -108,7 +112,7 @@
   .new-img__input {
     width: 238px;
     height: 26px;
-    margin: 0 auto 30px;
+    margin: 0 auto;
   }
 
   .new-img__save-btn {

@@ -41,7 +41,6 @@
   width: 358px;
   height: 27.34px;
   margin: 0 auto;
-  /*margin-bottom: 30px;*/
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 1);
 }
@@ -121,7 +120,7 @@
   .popup__input {
     width: 238px;
     height: 26px;
-    margin: 0 auto 30px;
+    margin: 0 auto;
   }
 
   .popup__save-btn {
