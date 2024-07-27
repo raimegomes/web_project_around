@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
   //editar perfil - nome e bio
-  const editProfileBtn = document.querySelector("#popup__container");
-  const popup = document.querySelector("#editPopup");
-  const closeBtn = document.querySelector("#popup__close");
-  const form = document.querySelector("#popup__form");
-  const displayName = document.querySelector("#popup__name");
-  const displayAbout = document.querySelector("#popup__about");
-  const nameInput = document.querySelector("#popup__input-name");
-  const aboutInput = document.querySelector("#popup__input-about");
+  const editProfileBtn = document.querySelector("#popup__container"); //foi ----
+  const popup = document.querySelector("#editPopup"); //foi como editpopup -------
+  const closeBtn = document.querySelector("#popup__close"); //foi
+  const form = document.querySelector("#popup__form"); //foi
+  const displayName = document.querySelector("#popup__name"); //----------
+  const displayAbout = document.querySelector("#popup__about"); //foi.-----------
+  const nameInput = document.querySelector("#popup__input-name"); //foi ---------
+  const aboutInput = document.querySelector("#popup__input-about"); //--------
 
   editProfileBtn.addEventListener("click", function () {
     nameInput.value = displayName.textContent;

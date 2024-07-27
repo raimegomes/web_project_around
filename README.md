@@ -4,30 +4,20 @@
 
 ## Sobre o Projeto
 
-**Around the U.S.** é uma página web interativa onde os usuários podem adicionar, remover e curtir fotos de diferentes lugares dos Estados Unidos. É um projeto voltado para amantes da natureza e viajantes, oferecendo uma plataforma para compartilhar e descobrir belas paisagens.
-
-## Funcionalidades
-
-- :repeat: Alterar o nome do perfil
-- ✨ Alterar a descrição (bio)
-- :camera: Adicionar novas fotos
-- 🗑️ Remover fotos existentes
-- ❤️ Curtir fotos
+**Biblioteca Triple Peaks** é a página web fictícia da biblioteca Triple Ten, oferecendo aos leitores uma experiência completa. Aqui, você pode explorar os livros mais populares, acompanhar os eventos, aprender como se tornar membro, além de acessar informações de contato e horários de funcionamento.
 
 ## Tecnologias Utilizadas
 
 - **HTML**: Estruturação da página
 - **CSS**: Estilização e layout
-- **JavaScript**: Funcionalidades interativas
 
 ## Design
 
-O design da página foi baseado em um layout criado na plataforma Figma. Abaixo, você pode ver uma prévia do design:
+O design da página foi baseado em um layout criado pelo bootcamp Triple Ten. Todavia, adicionei algumas funcionalidades por conta própria, como adicionar um 
 
-![Preview](./images/preview.jpg)
 
-## Como Usar
+## Confira o site neste link:
 
 1. Acesso à página web :arrow_heading_down:
 
-   https://raimegomes.github.io/web_project_around
+   https://raimegomes.github.io/web_project_library

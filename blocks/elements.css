@@ -20,6 +20,7 @@
   height: 282px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  cursor: pointer;
 }
 
 .element__card-bottom {
@@ -60,6 +61,10 @@
 }
 
 .element__trash-icon:hover {
+  opacity: 0.6;
+}
+
+.elements__icon:hover {
   opacity: 0.6;
 }
 
