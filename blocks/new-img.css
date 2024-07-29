@@ -39,7 +39,6 @@
   display: flex;
   flex-direction: column;
   margin: 0;
-  gap: 30px;
 }
 
 .new-img__input {
@@ -80,9 +79,12 @@
 .new-img__close-btn:hover {
   opacity: 0.6;
 }
-
-.popup__input_invalid {
-  border-color: rgba(255, 0, 0, 1);
+/*eu add agora*/
+.new-img__error {
+  color: rgba(255, 0, 0, 1);
+  font-size: 12px;
+  font-weight: 400;
+  margin: 5px 30px 35px;
 }
 
 .new-img__save-btn:disabled {
@@ -90,9 +92,6 @@
   background-color: rgb(255, 255, 255);
   cursor: not-allowed;
   border: 1px solid #cac8c8;
-}
-
-@media screen and (max-width: 1024px) {
 }
 
 @media screen and (max-width: 767px) {
@@ -121,5 +120,9 @@
   .new-img__close-btn {
     top: -3px;
     left: 140px;
+  }
+
+  .new-img__error {
+    margin-left: 20px;
   }
 }

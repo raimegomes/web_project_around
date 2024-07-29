@@ -3,11 +3,13 @@ import { FormValidator } from "./formValidator.js";
 import { openPopup, closePopup } from "./utils.js";
 
 // Configurações para validação do formulário
-const validationConfig = {
-  inputSelector: ".popup__input",
+const validationConfigNewImg = {
+  formSelector: "#newImgForm",
+  inputSelector: ".new-img__input",
   submitButtonSelector: ".new-img__save-btn",
-  inputErrorClass: "popup__input_invalid",
-  errorClass: "popup__error_visible",
+  inactiveButtonClass: "new-img__save-btn_disabled",
+  inputErrorClass: "new-img__input_invalid",
+  errorClass: "new-img__error_visible",
 };
 
 const validationConfigProfile = {
@@ -46,27 +48,28 @@ document.querySelector(".new-img__close-btn").addEventListener("click", () => {
   closePopup(document.querySelector(".new-img"));
 });
 
-// Formulário para add novas imagens
+// Validação do formulário para add imagens
 const newImgForm = document.querySelector("#newImgForm");
-if (newImgForm) {
-  const newImgFormValidator = new FormValidator(validationConfig, newImgForm);
-  newImgFormValidator.enableValidation();
+const newImgFormValidator = new FormValidator(
+  validationConfigNewImg,
+  newImgForm
+);
+newImgFormValidator.enableValidation();
 
-  newImgForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const titleInput = newImgForm.querySelector("#new-img__input-name");
-    const urlInput = newImgForm.querySelector("#new-img__input-url");
-    const card = new Card(
-      titleInput.value,
-      urlInput.value,
-      "#element-template"
-    );
-    const cardElement = card.getCard();
-    imgSection.prepend(cardElement);
-    closePopup(document.querySelector(".new-img"));
-    newImgForm.reset();
-  });
-}
+newImgForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const titleInput = newImgForm.querySelector("#new-img__input-name");
+  const urlInput = newImgForm.querySelector("#new-img__input-url");
+
+  const card = new Card(titleInput.value, urlInput.value, "#element-template");
+  const cardElement = card.getCard();
+  imgSection.prepend(cardElement);
+
+  closePopup(document.querySelector(".new-img"));
+  newImgForm.reset();
+  newImgFormValidator.toggleButtonState();
+  newImgFormValidator.resetValidation();
+});
 
 // Validação do formulário de edição de perfil - Nome e Bio
 const editProfileForm = document.querySelector("#popup__form");

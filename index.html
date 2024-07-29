@@ -47,7 +47,7 @@
             <img src="./images/+.svg" alt="+ icon" />
           </button>
         </section>
-        <!--POPUP PARA MUDAR NOME E BIO-->
+        <!--POPUP PARA EDITAR PERFIL - MUDAR NOME E BIO-->
         <section class="popup">
           <div class="popup__box" id="editPopup">
             <button
@@ -122,6 +122,10 @@
                   class="new-img__input"
                   placeholder="Título"
                 />
+                <span
+                  id="new-img__input-name-error"
+                  class="new-img__error"
+                ></span>
                 <label for="new-img__input-url" class="new-img__label"
                   >Link da imagem</label
                 >
@@ -133,6 +137,10 @@
                   class="new-img__input"
                   placeholder="Link da imagem"
                 />
+                <span
+                  id="new-img__input-url-error"
+                  class="new-img__error"
+                ></span>
                 <button type="submit" class="new-img__save-btn" disabled>
                   Criar
                 </button>

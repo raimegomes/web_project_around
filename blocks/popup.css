@@ -85,7 +85,7 @@
   color: rgba(255, 0, 0, 1);
   font-size: 12px;
   font-weight: 400;
-  margin: 5px 0 30px 35px;
+  margin: 5px 30px 35px;
 }
 
 .popup__input_invalid {
@@ -114,7 +114,9 @@
 
   .popup__title {
     font-size: 18px;
-    padding: 25px auto 76px;
+    padding-top: 35px;
+    padding-bottom: 36px;
+    padding-left: 20px;
   }
 
   .popup__input {
@@ -132,5 +134,10 @@
   .popup__close-btn {
     top: -3px;
     left: 83px;
+  }
+
+  .popup__error {
+    margin-left: 20px;
+    margin-right: 20px;
   }
 }
