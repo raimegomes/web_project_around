@@ -1,0 +1,29 @@
+@import url(../blocks/content.css);
+@import url(../blocks/elements.css);
+@import url(../blocks/footer.css);
+@import url(../blocks/header.css);
+@import url(../blocks/new-img.css);
+@import url(../blocks/page.css);
+@import url(../blocks/popup.css);
+@import url(../blocks/profile.css);
+
+@font-face {
+  font-family: "Inter 400";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Inter-400.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Inter 500";
+  font-style: normal;
+  font-weight: 500;
+  src: url(../fonts/Inter-500.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Inter 900";
+  font-style: bold;
+  font-weight: 900;
+  src: url(../fonts/Inter-900.ttf) format("truetype");
+}

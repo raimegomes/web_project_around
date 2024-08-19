@@ -17,16 +17,21 @@
     <div class="page">
       <header class="header">
         <img
-          src="./images/logo.svg"
+          src=" <%= require ('./images/logo.svg') %>"
           alt="logo around the U.S."
           class="header__logo"
         />
-        <img src="./images/line.png" alt="line" class="header__line" />
+
+        <img
+          src=" <%= require ('./images/line.png') %>"
+          alt="line"
+          class="header__line"
+        />
       </header>
       <main class="content">
         <section class="profile">
           <img
-            src="./images/profile-avatar.jpg"
+            src=" <%= require ('./images/profile-avatar.jpg') %>"
             alt="imagem de um homem jovem, com casaco amarelo, calça jeans e sapato vermelho, sentado na grama, olhando para o lado"
             class="profile__avatar"
           />
@@ -38,13 +43,16 @@
                 class="profile__button"
                 id="popup__container"
               >
-                <img src="./images/pen.svg" alt="pen icon" />
+                <img
+                  src=" <%= require ('./images/pen.svg') %>"
+                  alt="pen icon"
+                />
               </button>
             </div>
             <h2 class="profile__description" id="popup__about">Explorador</h2>
           </div>
           <button type="button" class="profile__add" id="profile__add">
-            <img src="./images/+.svg" alt="+ icon" />
+            <img src=" <%= require ('./images/+.svg') %>" alt="+ icon" />
           </button>
         </section>
         <!--POPUP PARA EDITAR PERFIL - MUDAR NOME E BIO-->
@@ -57,7 +65,7 @@
               aria-label="Close"
             >
               <img
-                src="./images/close-icon.svg"
+                src=" <%= require ('./images/close-icon.svg') %>"
                 alt="Close icon X"
                 class="popup__close-btn"
               />
@@ -99,9 +107,13 @@
         <!--POPUP PARA ADD IMGS-->
         <section class="new-img">
           <div class="new-img__box">
-            <button type="button" class="new-img__close-btn" aria-label="Close">
+            <button
+              type="button"
+              class="popup__close-btn new-img__close-btn"
+              aria-label="Close"
+            >
               <img
-                src="./images/close-icon.svg"
+                src=" <%= require ('./images/close-icon.svg') %>"
                 alt="Close icon X"
                 class="new-img__close-btn"
               />
@@ -132,10 +144,10 @@
                 <input
                   type="url"
                   id="new-img__input-url"
-                  name="link"
+                  name="url"
                   required
                   class="new-img__input"
-                  placeholder="Link da imagem"
+                  placeholder="URL da Imagem"
                 />
                 <span
                   id="new-img__input-url-error"
@@ -152,20 +164,16 @@
         <section class="elements">
           <template id="element-template">
             <div class="element">
-              <img class="element__image" src="javascript" alt="image cards" />
+              <img class="element__image" src="./index.js" alt="image cards" />
               <div class="element__card-bottom">
                 <p class="element__name"></p>
-                <img
-                  class="element__like"
-                  src="./images/like.svg"
-                  alt="símbolo de coração"
-                />
+                <img class="element__like" src="" alt="Like button" />
               </div>
               <!--PARTE DE EXCLUIR AS FOTOS-->
               <div class="element__trash-container">
                 <img
                   class="element__trash-icon"
-                  src="./images/trash-icon.svg"
+                  src=" <%= require ('./images/trash-icon.svg') %>"
                   alt="ícone de lixeira"
                 />
               </div>
@@ -173,16 +181,17 @@
           </template>
 
           <!--POPUP PARA EXPANDIR AS IMAGENS-->
-          <div class="elements__window" id="image-popup">
+
+          <div class="elements__window popup">
             <div class="elements__container">
               <button
-                class="elements__button elements__button_type_close"
+                class="elements__button_type_close"
                 type="button"
                 id="window-close-button"
               >
                 <img
                   class="elements__icon elements__icon_type_close"
-                  src="./images/close-icon.svg"
+                  src=" <%= require ('./images/close-icon.svg') %>"
                   alt="Botão de fechar"
                 />
               </button>
@@ -198,9 +207,5 @@
       </main>
       <footer class="footer">&copy; 2024 Around The U.S.</footer>
     </div>
-    <script type="module" src="./scripts/index.js"></script>
-    <script type="module" src="./scripts/card.js"></script>
-    <script type="module" src="./scripts/formValidator.js"></script>
-    <script type="module" src="./scripts/utils.js"></script>
   </body>
 </html>

@@ -1,4 +1,4 @@
-.popup__box {
+.new-img {
   display: flex;
   display: none;
   position: fixed;
@@ -13,7 +13,7 @@
   z-index: 1;
 }
 
-.popup__content {
+.new-img__content {
   width: 430px;
   min-height: 330px;
   background-color: rgba(255, 255, 255, 1);
@@ -21,23 +21,27 @@
   box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15);
 }
 
-.popup__title {
+.new-img__title {
   color: rgba(0, 0, 0, 1);
   font-family: "Inter 900";
   font-weight: 900;
   font-size: 24px;
   width: fit-content;
-  padding: 34px 0 54px 36px;
+  padding: 34px 0 34px 36px;
   margin: 0;
 }
 
-.popup__form {
+.popup__hidden {
+  display: none !important;
+}
+
+.new-img__form {
   display: flex;
   flex-direction: column;
   margin: 0;
 }
 
-.popup__input {
+.new-img__input {
   width: 358px;
   height: 27.34px;
   margin: 0 auto;
@@ -45,11 +49,11 @@
   border-bottom: 1px solid rgba(0, 0, 0, 1);
 }
 
-.popup__label {
+.new-img__label {
   display: none;
 }
 
-.popup__save-btn {
+.new-img__save-btn {
   width: 358px;
   height: 50.15px;
   background-color: rgba(0, 0, 0, 1);
@@ -60,84 +64,65 @@
   cursor: pointer;
 }
 
-.popup__save-btn:hover {
-  background-color: #333;
-}
-
-.popup__close-btn {
+.new-img__close-btn {
   color: rgba(255, 255, 255, 1);
   background: transparent;
   border: none;
   width: 40px;
   height: 40px;
-  top: -3px;
-  left: 120px;
+  top: -2px;
+  left: 300px;
   cursor: pointer;
   position: relative;
 }
 
-.popup__close-btn:hover {
+.new-img__close-btn:hover {
   opacity: 0.6;
 }
-
-/*PARTE DE VALIDAÇÃO*/
-.popup__error {
+/*eu add agora*/
+.new-img__error {
   color: rgba(255, 0, 0, 1);
   font-size: 12px;
   font-weight: 400;
   margin: 5px 30px 35px;
 }
 
-.popup__input_invalid {
-  border-color: rgba(255, 0, 0, 1);
-}
-
-.popup__save-btn:disabled {
+.new-img__save-btn:disabled {
   color: #cac8c8;
   background-color: rgb(255, 255, 255);
   cursor: not-allowed;
   border: 1px solid #cac8c8;
 }
 
-@media screen and (max-width: 1024px) {
-  .popup__close-btn {
-    top: -5px;
-    left: 119px;
-  }
-}
-
 @media screen and (max-width: 767px) {
-  .popup__content {
+  .new-img__content {
     width: 282px;
     height: 322px;
   }
 
-  .popup__title {
+  .new-img__title {
     font-size: 18px;
-    padding-top: 35px;
-    padding-bottom: 36px;
-    padding-left: 20px;
+    padding: 25px auto 76px;
   }
 
-  .popup__input {
+  .new-img__input {
     width: 238px;
     height: 26px;
     margin: 0 auto;
   }
 
-  .popup__save-btn {
+  .new-img__save-btn {
     width: 238px;
     height: 46px;
     margin: 16px auto 25px;
   }
 
-  .popup__close-btn {
-    top: -3px;
-    left: 83px;
+  .new-img__close-btn {
+    top: -1px;
+    left: 200px;
   }
 
-  .popup__error {
+  .new-img__error {
     margin-left: 20px;
-    margin-right: 20px;
   }
 }

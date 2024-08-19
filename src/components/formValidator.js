@@ -60,4 +60,14 @@ export class FormValidator {
   _hasInvalidInput() {
     return this._inputList.some((inputElement) => !inputElement.validity.valid);
   }
+
+  resetValidation() {
+    this._inputList.forEach((inputElement) => {
+      const errorElement = this._formElement.querySelector(
+        `#${inputElement.id}-error`
+      );
+      this._hideInputError(inputElement, errorElement);
+    });
+    this._toggleButtonState();
+  }
 }
