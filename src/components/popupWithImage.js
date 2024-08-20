@@ -11,14 +11,11 @@ export default class PopupWithImage extends Popup {
     );
   }
 
-  open(imageSrc, imageAlt, imageTitle) {
-    if (this._popupImage && this._popupTitle) {
-      this._popupImage.src = imageSrc;
-      this._popupImage.alt = imageAlt;
-      this._popupTitle.textContent = imageTitle;
-    } else {
-      console.error("Elementos de imagem ou título não encontrados.");
-    }
+  open(link, name) {
+    this._popupImage.src = link;
+    this._popupImage.alt = name;
+    this._popupTitle.textContent = name;
+
     super.open();
   }
 
