@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Around the USA</title>
+    <meta name="description" content="EUA afora. Página interativa de fotos." />
+    <meta
+      name="keywords"
+      content="EUA afora. Fotos EUA. Página interativa de fotos. Adicionar fotos."
+    />
+    <meta name="author" content="Raíme Gomes Amador" />
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="icon" href="./favicon.ico" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <img
+          src="./images/logo.svg"
+          alt="logo around the U.S."
+          class="header__logo"
+        />
+        <img src="./images/line.png" alt="line" class="header__line" />
+      </header>
+      <main class="content">
+        <section class="profile">
+          <img
+            src="./images/profile-avatar.jpg"
+            alt="imagem de um homem jovem, com casaco amarelo, calça jeans e sapato vermelho, sentado na grama, olhando para o lado"
+            class="profile__avatar"
+          />
+          <div class="profile__content">
+            <div class="profile__bio">
+              <h1 class="profile__name" id="popup__name">Jacques Cousteau</h1>
+              <button
+                type="button"
+                class="profile__button"
+                id="popup__container"
+              >
+                <img src="./images/pen.svg" alt="pen icon" />
+              </button>
+            </div>
+            <h2 class="profile__description" id="popup__about">Explorador</h2>
+          </div>
+          <button type="button" class="profile__add" id="profile__add">
+            <img src="./images/+.svg" alt="+ icon" />
+          </button>
+        </section>
+        <!--POPUP PARA EDITAR PERFIL - MUDAR NOME E BIO-->
+        <section class="popup">
+          <div class="popup__box" id="editPopup">
+            <button
+              type="button"
+              class="popup__close-btn"
+              id="popup__close"
+              aria-label="Close"
+            >
+              <img
+                src="./images/close-icon.svg"
+                alt="Close icon X"
+                class="popup__close-btn"
+              />
+            </button>
+            <div class="popup__content">
+              <h3 class="popup__title">Editar perfil</h3>
+              <form class="popup__form" id="popup__form">
+                <label for="popup__input-name" class="popup__label">Nome</label>
+                <input
+                  type="text"
+                  id="popup__input-name"
+                  name="name"
+                  required
+                  minlength="2"
+                  maxlength="40"
+                  class="popup__input"
+                />
+                <span id="popup__input-name-error" class="popup__error"></span>
+                <label for="popup__input-about" class="popup__label"
+                  >Sobre mim</label
+                >
+                <input
+                  type="text"
+                  id="popup__input-about"
+                  name="about"
+                  required
+                  minlength="2"
+                  maxlength="200"
+                  class="popup__input"
+                />
+                <span id="popup__input-about-error" class="popup__error"></span>
+                <button type="submit" class="popup__save-btn" disabled>
+                  Salvar
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
+        <!--POPUP PARA ADD IMGS-->
+        <section class="new-img">
+          <div class="new-img__box">
+            <button type="button" class="new-img__close-btn" aria-label="Close">
+              <img
+                src="./images/close-icon.svg"
+                alt="Close icon X"
+                class="new-img__close-btn"
+              />
+            </button>
+            <div class="new-img__content">
+              <h4 class="new-img__title">Novo local</h4>
+              <form class="new-img__form" id="newImgForm">
+                <label for="new-img__input-name" class="new-img__label"
+                  >Título</label
+                >
+                <input
+                  type="text"
+                  id="new-img__input-name"
+                  name="title"
+                  required
+                  minlength="2"
+                  maxlength="30"
+                  class="new-img__input"
+                  placeholder="Título"
+                />
+                <span
+                  id="new-img__input-name-error"
+                  class="new-img__error"
+                ></span>
+                <label for="new-img__input-url" class="new-img__label"
+                  >Link da imagem</label
+                >
+                <input
+                  type="url"
+                  id="new-img__input-url"
+                  name="link"
+                  required
+                  class="new-img__input"
+                  placeholder="Link da imagem"
+                />
+                <span
+                  id="new-img__input-url-error"
+                  class="new-img__error"
+                ></span>
+                <button type="submit" class="new-img__save-btn" disabled>
+                  Criar
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
+        <!--CARD DAS FOTOS-->
+        <section class="elements">
+          <template id="element-template">
+            <div class="element">
+              <img class="element__image" src="javascript" alt="image cards" />
+              <div class="element__card-bottom">
+                <p class="element__name"></p>
+                <img
+                  class="element__like"
+                  src="./images/like.svg"
+                  alt="símbolo de coração"
+                />
+              </div>
+              <!--PARTE DE EXCLUIR AS FOTOS-->
+              <div class="element__trash-container">
+                <img
+                  class="element__trash-icon"
+                  src="./images/trash-icon.svg"
+                  alt="ícone de lixeira"
+                />
+              </div>
+            </div>
+          </template>
+
+          <!--POPUP PARA EXPANDIR AS IMAGENS-->
+          <div class="elements__window" id="image-popup">
+            <div class="elements__container">
+              <button
+                class="elements__button elements__button_type_close"
+                type="button"
+                id="window-close-button"
+              >
+                <img
+                  class="elements__icon elements__icon_type_close"
+                  src="./images/close-icon.svg"
+                  alt="Botão de fechar"
+                />
+              </button>
+              <img
+                class="elements__window-image"
+                src="javascript"
+                alt="Imagem"
+              />
+              <h3 class="elements__window-name"></h3>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">&copy; 2025 Around The U.S.</footer>
+    </div>
+    <script src="./scripts/index.js"></script>
+  </body>
+</html>
