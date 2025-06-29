@@ -1,0 +1,20 @@
+.page {
+  margin: 0 auto;
+  font-family: "Inter 400", "Times New Roman";
+  font-size: 16px;
+  line-height: 1.25;
+  background-color: rgba(0, 0, 0, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+@media screen and (max-width: 1024px) {
+  .page {
+    min-width: 768px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .page {
+    min-width: 320px;
+  }
+}

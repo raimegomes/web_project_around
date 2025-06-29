@@ -1,0 +1,11 @@
+@import url(./vendor/normalize.css);
+@import url(./vendor/fonts.css);
+@import url(./bocks/page.css);
+@import url(./bocks/header.css);
+@import url(./bocks/content.css);
+@import url(./bocks/profile.css);
+@import url(./bocks/popup.css);
+@import url(./bocks/elements.css);
+@import url(./bocks/new-img.css);
+@import url(./bocks/footer.css);
+
