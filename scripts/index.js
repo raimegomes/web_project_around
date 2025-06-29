@@ -21,14 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
     popup.style.display = "none";
   });
 
-  //Fecha o popup de nome e bio ao clicar fora
-  window.addEventListener("click", function (event) {
-    if (event.target === popup) {
-      popup.style.display = "none";
-    }
-  });
-
-  
   form.addEventListener("submit", function (event) {
     event.preventDefault();
     displayName.textContent = nameInput.value;
@@ -141,5 +133,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
   closeButton.addEventListener("click", closeImagePopup);
 
-  //Validação de formulários
+  //Função para fechar todos os popups ao clicar fora
+  function fechaPopupClickFora(popupElement, closeFunction) {
+    window.addEventListener("click", function (event) {
+      if (event.target === popupElement) {
+        closeFunction();
+      }
+    });
+  }
+
+  //fecha o popup de editar perfil ao clicar fora
+  fechaPopupClickFora(popup, () => (popup.style.display = "none"));
+
+  //fecha o popup de add imagem ao clicar fora
+  fechaPopupClickFora(
+    newPlacePopup,
+    () => (newPlacePopup.style.display = "none")
+  );
+
+  //fecha o popup de expandir imagem ao clicar fora
+  fechaPopupClickFora(imagePopup, closeImagePopup);
 });
